@@ -1,21 +1,23 @@
 class BinarySearchTree:
-    def __init__(self, value):
+    def __init__(self, value=None):
         self.value = value
         self.left = None
         self.right = None
 
-    def insert(self, value):
-        if value < self.value:
+    def insert(self, name):
+        value = int(name[0])
+
+        if value < self.value[0]:
             if not self.left:
-                self.left = BinarySearchTree(value)
+                self.left = BinarySearchTree(name)
             else:
                 # recursive to keep going until we find an empty spot
-                self.left.insert(value)
+                self.left.insert(name)
         else:
             if not self.right:
-                self.right = BinarySearchTree(value)
+                self.right = BinarySearchTree(name)
             else:
-                self.right.insert(value)
+                self.right.insert(name)
 
     def contains(self, target):
         if target == self.value:
