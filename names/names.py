@@ -14,7 +14,6 @@ f.close()
 bst = BinarySearchTree('Logan Hufstetler')
 for name in names_1:
     bst.insert(name)
-print(bst.name, bst.right.name)
 
 duplicates = []
 for name in names_2:
