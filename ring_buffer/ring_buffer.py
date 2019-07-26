@@ -14,6 +14,7 @@ class RingBuffer:
             self.current = 0
 
     def get(self):
+        # ** Does not affect self.storage **
         no_nones = []
         for item in self.storage:
             if item:
