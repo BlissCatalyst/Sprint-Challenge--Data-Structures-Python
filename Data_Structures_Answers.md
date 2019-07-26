@@ -18,12 +18,15 @@ Add your answers to the questions below.
 
 5. What is the runtime complexity of the provided code in `names.py`?
 
-   > O(n\*m + 5n)
+   > O(n^2 + 5n)
 
 6. What is the space complexity of the provided code in `names.py`?
 
-   > O(3n + 5)
+   > O(n^2 + 5)
 
 7. What is the runtime complexity of your optimized code in `names.py`?
 
+   > O(n log n)
+
 8. What is the space complexity of your optimized code in `names.py`?
+   > O(n log n)
