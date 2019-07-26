@@ -1,31 +1,29 @@
 class BinarySearchTree:
-    def __init__(self, value=None):
-        self.value = value
+    def __init__(self, name):
+        self.name = name
         self.left = None
         self.right = None
 
-    def insert(self, name):
-        value = int(name[0])
-
-        if value < self.value[0]:
+    def insert(self, new_name):
+        if new_name < self.name[0]:
             if not self.left:
-                self.left = BinarySearchTree(name)
+                self.left = BinarySearchTree(new_name)
             else:
                 # recursive to keep going until we find an empty spot
-                self.left.insert(name)
+                self.left.insert(new_name)
         else:
             if not self.right:
-                self.right = BinarySearchTree(name)
+                self.right = BinarySearchTree(new_name)
             else:
-                self.right.insert(name)
+                self.right.insert(new_name)
 
     def contains(self, target):
-        if target == self.value:
+        if target == self.name:
             return True
         if not self.left and not self.right:
             return False
         if self.left:
-            if target < self.value:
+            if target < self.name:
                 # we know to go left
                 if not self.left:
                     return False
@@ -42,12 +40,12 @@ class BinarySearchTree:
         if not self:
             return None
         if not self.right:
-            return self.value
+            return self.name
         else:
             return self.right.get_max()
 
     def for_each(self, cb):
-        cb(self.value)
+        cb(self.name)
 
         if self.left:
             self.left.for_each(cb)
